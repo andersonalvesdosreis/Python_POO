@@ -20,4 +20,8 @@ print(obj.mensagem())
 
 #Teste com o segundo objeto!
 
+obj2 = MinhaClasse()
+obj2.nome = 'Maria'
+obj2.idade = 20
+print(obj2.mensagem())
 
