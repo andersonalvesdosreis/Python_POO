@@ -1,20 +1,19 @@
 class MinhaClasse:
+    """
+    Representa uma pessoa com nome e idade.
+
+    Attributes:
+        nome (str): O nome da pessoa. O valor padrão é uma string vazia.
+        idade (int): A idade da pessoa em anos. O valor padrão é 0.
+    """
     def __init__(self, nome = '', idade = 0):
         self.nome = nome
         self.idade = idade
 
-    def aniversario(self):
-        self.idade += 1
-
-    def mensagem(self):
+    def __str__(self):
         return f'O(a) {self.nome} tem {self.idade} anos!'
 
 #Melhoria de codigo!
 
 obj = MinhaClasse('Anderson',17)
-if obj.nome == 15:
-    obj.aniversario()
-print(obj.mensagem())
-
-obj2 = MinhaClasse('Maria',20)
-print(obj2.mensagem())
+print(obj)
