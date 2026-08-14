@@ -19,4 +19,6 @@ if pergunta4 == 'S':
     pergunta_valor = float(input('Quanto? '))
     cliente2.saque_no_saldo(saque=pergunta_valor)
     print(cliente2)
-pergunta5 =
+pergunta5 = str(input('Deseja ver estrutura do codigo? (S= para sim)')).upper()
+if pergunta4 == 'S':
+    print(ContaBancaria.__doc__)

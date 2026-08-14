@@ -35,7 +35,7 @@ class ContaBancaria:
     # print(cliente)                                                   Mostrar no Terminal o resultado
     
     
-    Agora é a sua vez!
+    Autor: Anderson Alves
     """
 
     def __init__(self,nome, saldo = 0):
@@ -46,7 +46,7 @@ class ContaBancaria:
         self.saldo += deposito
 
     def saque_no_saldo(self, saque = 0):
-        if saque >= self.saldo:
+        if saque <= self.saldo:
             self.saldo -= saque
 
     def __str__(self):
