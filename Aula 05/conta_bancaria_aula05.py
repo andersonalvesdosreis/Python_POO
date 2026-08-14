@@ -22,3 +22,5 @@ if pergunta4 == 'S':
 pergunta5 = str(input('Deseja ver estrutura do codigo? (S= para sim)')).upper()
 if pergunta4 == 'S':
     print(ContaBancaria.__doc__)
+
+print('=-'*20)
