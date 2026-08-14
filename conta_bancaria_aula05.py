@@ -1,25 +1,20 @@
-class ContaBancaria:
-    """
-    Classe Para Definir conta bancaria:
+import classe_aula05
+print('=-'*20)
 
-    -> deposito no saldo: soma o valor depositado ao saldo
-    -> saque no saldo: retira o valor sacado do saldo
-    
-    >> Deve informar os dados: nome = para o nome(str) e saldo = para seu saldo(int)
-    >> deposito_no_saldo = para o deposito a ser realizado(int)
-    >>saque_no_saldo = para a quantidade a ser retirada no saldo(int)
-    """
+pergunta = str(input('Qual seu nome? '))
+pergunta2 = int(input('Qual seu saldo? '))
+cliente2 = ContaBancaria(nome= pergunta,saldo= pergunta2)
+print(cliente2)
 
-    def __init__(self,nome = ' ', saldo = 0):
-        self.nome = nome
-        self.saldo = saldo
+print('=-'*20)
 
-    def deposito_no_saldo(self, deposito = 0):
-        self.saldo += deposito
-
-    def saque_no_saldo(self, saque = 0):
-        self.saldo -= saque
-
-    def __str__(self):
-        return f"{self.nome:<20} | R$ {self.saldo:>9.2f}"
-
+pergunta3 = str(input('Deseja depositar algum valor? (S= para sim)')).upper()
+if pergunta3 == 'S':
+    pergunta_valor = int(input('Quanto? '))
+    cliente2.deposito_no_saldo(deposito=pergunta_valor)
+    print(cliente2)
+pergunta4 = str(input('Deseja saquar algum valor? (S= para sim)')).upper()
+if pergunta4 == 'S':
+    pergunta_valor = int(input('Quanto? '))
+    cliente2.saque_no_saldo(saque=pergunta_valor)
+    print(cliente2)
