@@ -1,4 +1,5 @@
-import classe_aula05
+from classes import ContaBancaria
+
 print('=-'*20)
 
 pergunta = str(input('Qual seu nome? '))
