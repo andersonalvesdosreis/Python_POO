@@ -19,3 +19,4 @@ if pergunta4 == 'S':
     pergunta_valor = float(input('Quanto? '))
     cliente2.saque_no_saldo(saque=pergunta_valor)
     print(cliente2)
+pergunta5 =
