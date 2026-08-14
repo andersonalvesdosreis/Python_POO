@@ -7,7 +7,7 @@ class ContaBancaria:
     
     >> Deve informar os dados: nome = para o nome(str) e saldo = para seu saldo(int)
     >> deposito_no_saldo = para o deposito a ser realizado(int)
-    >>saque_no_saldo = para a quantidade a ser retirada no saldo(int)
+    >> saque_no_saldo = para a quantidade a ser retirada no saldo(int) 
 
     Estrutura montada:
 
