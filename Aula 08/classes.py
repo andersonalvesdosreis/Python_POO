@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC , abstractmethod
 
 class Cadastro(ABC):
     def __init__(self,nome= '',idade=0):
@@ -8,7 +8,7 @@ class Cadastro(ABC):
     def aniversario(self):
         self.idade += 1
 
-    @abs
+    @abstractmethod
     def estudar(self):
         pass
 
