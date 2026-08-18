@@ -34,8 +34,8 @@ class Circulo(Poligono):
 
     def analisar(self):
         print(f'Considerando PI como 3,14!')
-        print(f'Area: {self.area(x= self.num)}')
-        print(f'Perimetro: {self.perimetro(x= self.num)}')
+        print(f'Area: {self.area(x= self.num):.2f}')
+        print(f'Perimetro: {self.perimetro(x= self.num):.2f}')
 
 #Testes
 
