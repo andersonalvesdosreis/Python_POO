@@ -40,16 +40,25 @@ class Drone(Transporte):
         return super().calcular_frete()
 
 class Mostrar():
-    def __init__(self,dist):
+    def __init__(self, dist):
         self.distancia = dist
 
     def mostrar(self):
-        obj1 = Moto(dist=self.distancia)
-        obj2 = Caminhão(dist=self.distancia)
-        obj3 = Drone(dist=self.distancia)
 
-        print(f'Tabela de preços conforme a distancia de {self.distancia}km')
-        print(f'MOTO: R${obj1.calcular_frete()}\nCaminhão: R${obj2.calcular_frete()}\nDrone: R${obj3.calcular_frete()}')
+        veiculos = [
+            Moto(dist=self.distancia),
+            Caminhão(dist=self.distancia),
+            Drone(dist=self.distancia)
+        ]
+
+        print(f'Tabela de preços conforme a distancia de {self.distancia}km:')
+        print('-' * 40)
+        
+        for veiculo in veiculos:
+
+            nome = veiculo.__class__.__name__ 
+            resultado = veiculo.calcular_frete()
+            print(f'{nome}: R${resultado}')
 
 dist = 20
 entrega = Mostrar(dist=dist)
