@@ -6,7 +6,7 @@ class Transporte(ABC):
         self.verificacao = True
 
     @abstractmethod
-    def caucular_frete(self):
+    def calcular_frete(self):
         if self.verificacao:
             return self.distancia*self.frete
         else:
@@ -17,8 +17,8 @@ class Moto(Transporte):
     def __init__(self,dist):
         super().__init__(distancia=dist,frete=0.5)
 
-    def caucular_frete(self):
-        return super().caucular_frete()
+    def calcular_frete(self):
+        return super().calcular_frete()
         
 
 class Caminhão(Transporte):
@@ -27,8 +27,8 @@ class Caminhão(Transporte):
         if self.distancia < 50:
             self.verificacao = False
 
-    def caucular_frete(self):
-        return super().caucular_frete()
+    def calcular_frete(self):
+        return super().calcular_frete()
 
 class Drone(Transporte):
     def __init__(self,dist):
@@ -36,11 +36,21 @@ class Drone(Transporte):
         if self.distancia > 10:
             self.verificacao = False
 
-    def caucular_frete(self):
-        return super().caucular_frete()
+    def calcular_frete(self):
+        return super().calcular_frete()
 
 class Mostrar():
     def __init__(self,dist):
         self.distancia = dist
 
-    def 
+    def mostrar(self):
+        obj1 = Moto(dist=self.distancia)
+        obj2 = Caminhão(dist=self.distancia)
+        obj3 = Drone(dist=self.distancia)
+
+        print(f'Tabela de preços conforme a distancia de {self.distancia}km')
+        print(f'MOTO: R${obj1.calcular_frete()}\nCaminhão: R${obj2.calcular_frete()}\nDrone: R${obj3.calcular_frete()}')
+
+dist = 20
+entrega = Mostrar(dist=dist)
+entrega.mostrar()

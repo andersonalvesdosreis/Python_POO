@@ -6,7 +6,7 @@ class Transporte(ABC):
         self.verificacao = True
 
     @abstractmethod
-    def caucular_frete(self):
+    def calcular_frete(self):
         if self.verificacao:
             return self.distancia*self.frete
         else:
@@ -17,7 +17,7 @@ class Moto(Transporte):
     def __init__(self,dist):
         super().__init__(distancia=dist,frete=0.5)
 
-    def caucular_frete(self):
+    def calcular_frete(self):
         return super().caucular_frete()
         
 
@@ -27,7 +27,7 @@ class Caminhão(Transporte):
         if self.distancia < 50:
             self.verificacao = False
 
-    def caucular_frete(self):
+    def calcular_frete(self):
         return super().caucular_frete()
 
 class Drone(Transporte):
@@ -36,7 +36,7 @@ class Drone(Transporte):
         if self.distancia > 10:
             self.verificacao = False
 
-    def caucular_frete(self):
+    def calcular_frete(self):
         return super().caucular_frete()
 
 #Teste:
