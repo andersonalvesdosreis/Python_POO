@@ -60,6 +60,8 @@ class Mostrar():
             resultado = veiculo.calcular_frete()
             print(f'{nome}: R${resultado}')
 
+#Teste:
+
 dist = 20
 entrega = Mostrar(dist=dist)
 entrega.mostrar()
