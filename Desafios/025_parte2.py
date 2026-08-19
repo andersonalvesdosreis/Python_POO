@@ -3,7 +3,7 @@ class Transporte(ABC):
     def __init__(self,distancia,frete=0):
         self.distancia = distancia
         self.frete = frete
-        self.verficacao = True
+        self.verificacao = True
 
     @abstractmethod
     def caucular_frete(self):
@@ -38,3 +38,9 @@ class Drone(Transporte):
 
     def caucular_frete(self):
         return super().caucular_frete()
+
+class Mostrar():
+    def __init__(self,dist):
+        self.distancia = dist
+
+    def 

@@ -3,7 +3,7 @@ class Transporte(ABC):
     def __init__(self,distancia,frete=0):
         self.distancia = distancia
         self.frete = frete
-        self.verficacao = True
+        self.verificacao = True
 
     @abstractmethod
     def caucular_frete(self):
