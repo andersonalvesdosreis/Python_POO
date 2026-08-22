@@ -98,4 +98,26 @@ personagem3.mostrar()
 sleep(3)
 limpar_terminal()
 
-#Primeiros ataques
+#Primeiros ataques:
+
+personagem1.atacar(personagem3,dano=2000)
+sleep(3)
+limpar_terminal()
+personagem2.atacar(personagem1,dano=2000)
+sleep(3)
+limpar_terminal()
+personagem3.atacar(personagem2,dano=2000)
+sleep(3)
+limpar_terminal()
+
+#Mostrar Depois do Primeiro ataque!:
+
+personagem1.mostrar()
+sleep(3)
+limpar_terminal()
+personagem2.mostrar()
+sleep(3)
+limpar_terminal()
+personagem3.mostrar()
+sleep(3)
+limpar_terminal()
