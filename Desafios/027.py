@@ -1,5 +1,9 @@
 import random
+import os
+from time import sleep
 from abc import *
+def limpar_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
 class Personagem(ABC):
     def __init__(self,nome='',vida=0):
         golpes = ["soco", "chute", "voadora", "ataque por trás"]
@@ -27,7 +31,14 @@ class Personagem(ABC):
     def curar(self):
         pass
 
-class Mago(Personagem):
+class Mostrar(Personagem):
+    def __init__(self,nome,vida):
+        super().__init__(nome=nome,vida=vida)
+
+    def mostrar(self,obj = object):
+        print(f'O {obj.__class__} possui:\nNome: {self.nome}\nVida: {self.vida}\nGolpes: {self.golpes}')
+
+class Mago(Personagem,Mostrar):
     def __init__(self,nome,vida):
         super().__init__(nome=nome,vida=vida)
         novo_golpe = 'Golpe de poder supremo'
@@ -38,7 +49,10 @@ class Mago(Personagem):
         self.vida = self.vida + self.cura
         print(f'\033[34mO Mago {self.nome}, lançou um feitiço de cura!\033[m\nE recuperou {self.cura} de vida\nVida de {self.nome}: {self.vida}')
 
-class Guerreiro(Personagem):
+    def mostrar(self, obj=object):
+        return super().mostrar(obj)
+    
+class Guerreiro(Personagem,Mostrar):
     def __init__(self,nome,vida):
         super().__init__(nome=nome,vida=vida)
         novo_golpe = 'Espadada Mortal'
@@ -49,7 +63,10 @@ class Guerreiro(Personagem):
         self.vida = self.vida + self.cura
         print(f'\033[34mO Guerreiro {self.nome}, colocou uma bandagem!\033[m\nE recuperou {self.cura} de vida\nVida de {self.nome}: {self.vida}')
 
-class Arqueiro(Personagem):
+    def mostrar(self, obj=object):
+        return super().mostrar(obj)
+
+class Arqueiro(Personagem,Mostrar):
     def __init__(self,nome,vida):
         super().__init__(nome=nome,vida=vida)
         novo_golpe = 'Lançou uma flecha de fogo'
@@ -59,3 +76,26 @@ class Arqueiro(Personagem):
     def curar(self):
         self.vida = self.vida + self.cura
         print(f'\033[34mO Arqueiro {self.nome}, usou suas ervas medicinais para se curar!\033[m\nE recuperou {self.cura} de vida\nVida de {self.nome}: {self.vida}')
+
+    def mostrar(self, obj=object):
+        return super().mostrar(obj)
+
+#Exemplos:
+
+personagem1 = Guerreiro('Björn',vida=2000)
+personagem2 = Arqueiro('Artemis',vida=2000)
+personagem3 = Mago('Aldous',vida=2000)
+
+#Mostrar:
+
+personagem1.mostrar()
+sleep(3)
+limpar_terminal()
+personagem2.mostrar()
+sleep(3)
+limpar_terminal()
+personagem3.mostrar()
+sleep(3)
+limpar_terminal()
+
+#Primeiros ataques
