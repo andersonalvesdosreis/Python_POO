@@ -12,12 +12,17 @@ class Personagem(ABC):
 
     def atacar(self,alvo=object,dano=1):
         dano_gerado = random.randint(1,dano)
-        self.dano = dano_gerado
-        alvo.vida = alvo.vida - dano_gerado
         golpe_escolhido = random.choice(self.golpes)
-        print(f'{self.nome} atacou {alvo.nome} com {golpe_escolhido} de força {dano}')
-        print(f'{alvo.nome} recebeu {self.dano} de dano!')
-        print(f'\033[31mVida de {self.nome}: {self.vida}\nVida de {alvo.nome}: {alvo.vida}\033[m')
+        self.dano = dano_gerado
+        if self.dano > alvo.vida:
+            print(f'{self.nome} atacou {alvo.nome} com {golpe_escolhido} de força {dano}')
+            print(f'{alvo.nome} recebeu {self.dano} de dano!')
+            print(f'\033[31mO {alvo.nome} Morreu!\033[m')
+        else:
+            alvo.vida = alvo.vida - dano_gerado
+            print(f'{self.nome} atacou {alvo.nome} com {golpe_escolhido} de força {dano}')
+            print(f'{alvo.nome} recebeu {self.dano} de dano!')
+            print(f'\033[31mVida de {self.nome}: {self.vida}\nVida de {alvo.nome}: {alvo.vida}\033[m')
 
     @abstractmethod
     def curar(self):
