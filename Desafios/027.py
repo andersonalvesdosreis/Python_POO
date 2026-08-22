@@ -8,7 +8,6 @@ class Personagem(ABC):
         self.golpes = golpes
         self.dano = 0
         self.nova_vida = 0
-        self.cura = random.randint(1,vida)
 
     def atacar(self,alvo=object,dano=1):
         dano_gerado = random.randint(1,dano)
@@ -33,6 +32,7 @@ class Mago(Personagem):
         super().__init__(nome=nome,vida=vida)
         novo_golpe = 'Golpe de poder supremo'
         self.golpes.append(novo_golpe)
+        self.cura = random.randint(1,vida)
 
     def curar(self):
         self.vida = self.vida + self.cura
@@ -43,6 +43,7 @@ class Guerreiro(Personagem):
         super().__init__(nome=nome,vida=vida)
         novo_golpe = 'Espadada Mortal'
         self.golpes.append(novo_golpe)
+        self.cura = random.randint(1,vida)
 
     def curar(self):
         self.vida = self.vida + self.cura
@@ -53,6 +54,7 @@ class Arqueiro(Personagem):
         super().__init__(nome=nome,vida=vida)
         novo_golpe = 'Lançou uma flecha de fogo'
         self.golpes.append(novo_golpe)
+        self.cura = random.randint(1,vida)
 
     def curar(self):
         self.vida = self.vida + self.cura
