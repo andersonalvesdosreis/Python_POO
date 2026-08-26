@@ -1,5 +1,6 @@
 from rich import print
 import hashlib
+#Exercicio semelhante ao: 10
 class ContaBancaria:
     """
     Classe Para Definir conta bancaria:
@@ -43,8 +44,7 @@ class ContaBancaria:
     def __init__(self,nome, senha, saldo = 0):
         self.__nome = nome
         self.__saldo = saldo
-        self._senha = senha
-        mensagem_em_bytes = self._senha.encode('utf-8')
+        mensagem_em_bytes = senha.encode('utf-8')
         hash_objeto = hashlib.sha256(mensagem_em_bytes)
         resultado = hash_objeto.hexdigest()
         self.__senha_cript = resultado
@@ -67,7 +67,7 @@ class ContaBancaria:
             return None
 
     def saque_no_saldo(self, saque = 0):
-        if self.pedir_senha == True:
+        if self.pedir_senha() == True:
             if saque <= self.__saldo:
                 self.__saldo -= saque
         else:
