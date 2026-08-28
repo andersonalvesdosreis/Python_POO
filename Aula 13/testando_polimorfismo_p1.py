@@ -1,6 +1,8 @@
 from rich import print
 from abc import ABC , abstractmethod
 
+#Aula 13 --> Overide
+
 class Pessoa:
     def __init__(self,nome:str = '',idade:int = 0):
         self._nome = nome
