@@ -21,5 +21,8 @@ class Carteira:
 
 carteira1 = Carteira('Anderson',200)
 print(carteira1)
-#carteira1.saldo(3000)
+
+#Caso tente rodar o programa retorna erro!
+# --> carteira1.saldo(3000)
+
 inspect(carteira1)
